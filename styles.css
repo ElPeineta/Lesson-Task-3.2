@@ -1,0 +1,64 @@
+.loadingblock {
+  width: 134px;
+  height: 134px;
+  display: inline-block;
+  overflow: hidden;
+  background: #f1f2f3;
+}
+
+@keyframes myanimation {
+  0% { transform: translate(1px, 5px) scale(0); }
+  25% { transform: translate(1px, 5px) scale(0); }
+  50% { transform: translate(1px, 5px) scale(1); }
+  75% { transform: translate(56.28px, 56.28px) scale(1); }
+  100% { transform: translate(101.84px, 56.28px) scale(1); }
+}
+
+@keyframes myanimationSize {
+  0% { transform: translate(101.84px, 56.28px) scale(0); }
+  100% { transform: translate(101.84px, 56.28px) scale(2); }
+}
+
+@keyframes myanimationColor {
+  0% { background: red; }
+  25% { background: green; }
+  50% { background: blue; }
+  75% { background: yellow; }
+  100% { background: purple; }
+}
+
+.myanimation div {
+  position: relative; /* Change to absolute and adjust width/height as per Part 4 */
+  width: 21.44px;
+  height: 30px; /* Larger than width for demonstration */
+  border-radius: 10%;
+  background: orange;
+  animation: myanimation 1.923076923076923s infinite cubic-bezier(0,0.5,0.5,1);
+}
+
+.myanimation div.circle1 {
+  background: lightyellow;
+  transform: translate(101.84px, 56.28px) scale(1);
+  animation: myanimationSize 0.4807692307692307s infinite cubic-bezier(0,0.5,0.5,1),
+             myanimationColor 1.923076923076923s infinite step-start;
+}
+
+.myanimation div.circle2 {
+  background: lightpink;
+  animation-delay: -0.4807692307692307s;
+}
+
+.myanimation div.circle3 {
+  animation-delay: -0.9615384615384615s;
+  background: lightyellow;
+}
+
+.myanimation div.circle4 {
+  animation-delay: -1.4423076923076923s;
+  background: skyblue;
+}
+
+.myanimation div.circle5 {
+  animation-delay: -1.923076923076923s;
+  background: gray;
+}
